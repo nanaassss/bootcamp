@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atlas Rápido — consulte a REST Countries API</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="compass" aria-hidden="true">
+      <span class="needle"></span>
+    </div>
+    <h1>Atlas Rápido</h1>
+    <p class="subtitle">Consulta em tempo real à <a href="https://countries.dev/" target="_blank" rel="noopener">countries.dev</a></p>
+  </header>
+
+  <main>
+    <form id="search-form" class="search-form" autocomplete="off">
+      <label for="country-input" class="visually-hidden">Nome do país</label>
+      <input
+        id="country-input"
+        name="country"
+        type="text"
+        placeholder="Digite o nome de um país (ex: brasil, japão, portugal)"
+        required
+      />
+      <button type="submit" id="search-btn">
+        <span>Consultar</span>
+      </button>
+    </form>
+
+    <p class="hint">Experimente:
+      <button type="button" class="chip" data-name="brasil">brasil</button>
+      <button type="button" class="chip" data-name="japan">japão</button>
+      <button type="button" class="chip" data-name="portugal">portugal</button>
+      <button type="button" class="chip" data-name="egypt">egito</button>
+    </p>
+
+    <section id="status" class="status" role="status" aria-live="polite"></section>
+
+    <section id="result" class="result-card" hidden>
+      <div class="result-top">
+        <img id="country-flag" src="" alt="" />
+        <div class="result-id-wrap">
+          <span id="country-region" class="country-region"></span>
+          <h2 id="country-name" class="country-name"></h2>
+        </div>
+      </div>
+
+      <dl class="stat-grid">
+        <div class="stat">
+          <dt>Capital</dt>
+          <dd id="country-capital">—</dd>
+        </div>
+        <div class="stat">
+          <dt>População</dt>
+          <dd id="country-population">—</dd>
+        </div>
+        <div class="stat">
+          <dt>Área</dt>
+          <dd id="country-area">—</dd>
+        </div>
+        <div class="stat">
+          <dt>Moeda(s)</dt>
+          <dd id="country-currencies">—</dd>
+        </div>
+        <div class="stat stat-wide">
+          <dt>Idioma(s)</dt>
+          <dd id="country-languages">—</dd>
+        </div>
+        <div class="stat stat-wide">
+          <dt>Fronteiras</dt>
+          <dd id="country-borders">—</dd>
+        </div>
+      </dl>
+    </section>
+  </main>
+
+  <footer>
+    <p>Projeto de estudo — consome dados públicos da <a href="https://countries.dev/" target="_blank" rel="noopener">countries.dev</a>, sem necessidade de chave de API.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
